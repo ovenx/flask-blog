@@ -23,13 +23,21 @@ app.jinja_env.filters['list_to_dict'] = list_to_dict
 app.jinja_env.filters['split'] = lambda x,y:x.split(y)
 app.jinja_env.filters['num_to_date'] = num_to_date
 
+from .models.tag import Tag
+from .models.category import Category
+
 @app.before_request
 def cache_file():
     cat_cache = CacheFile('category', 'json')
+    if not cat_cache.is_exists() :
+        Category.cache()
     g.categorys = cat_cache.read()
-
+    
     tag_cache = CacheFile('tag', 'json')
+    if not tag_cache.is_exists() :
+        Tag.cache()
     g.tags = tag_cache.read()
+  
     g.page = int(request.args.get('page', 1))
     if g.page < 0 :
         g.page = 1

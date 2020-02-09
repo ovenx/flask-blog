@@ -1,24 +1,23 @@
-# flask-blog - yet another flask blog
+# flask-blog
 基于 flask 的极简 blog
 
 ## 安装
 
 clone 代码到本地
 ```shell
-git clone git@github.com:jifegg/flask-blog.git
+git clone git@github.com:ovenx/flask-blog.git
 ```
 
 安装 virtualenv
 ```shell
-pip install virtualenv
 cd flask-blog
-virtualenv venv
-source venv/bin/activate # venv\scripts\activate(windows)
+python -m venv venv #python3
+. venv/bin/activate # venv\scripts\activate(windows)
 ```
 
 安装依赖
 ```shell
-pip install . # or add -e
+pip install -r requirements.txt
 ```
 
 创建数据库，导入数据表
@@ -28,7 +27,11 @@ source flask-blog/schema.sql
 ```
 > 或者可以通过 flask initdb 方式来导入数据表（需要设置FLASK_APP）
 
-修改配置文件， 配置文件在 flask-blog/config.py.example 中，复制一份重命名 config.py。
+创建配置文件，修改数据库配置
+
+```bash
+cp config.py.example config.py
+```
 
 然后运行
 ```shell
@@ -47,7 +50,7 @@ gulp # gulp watch
 ## 部署
 
 flask 自带的 server 不适用于生产环境，需要使用其它 server 代替，[请参考文档说明](http://flask.pocoo.org/docs/0.12/deploying/#deployment)。
-推荐使用 **gunicorn + nginx + supervisor** 方式，[详情参考](https://blog.bugo.top/article/3) 。
+推荐使用 **gunicorn + nginx + supervisor** 方式，[详情参考](https://blog.xiongwentao.me/2020/02/09/flask-blog-deploy/) 。
 
 
 ## 功能

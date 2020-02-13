@@ -1,7 +1,7 @@
 {
   "name": "flask-blog",
   "version": "1.0.0",
-  "description": "yet another flask blog",
+  "description": "simple falsk blog",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -13,7 +13,7 @@
     "flask",
     "blog"
   ],
-  "author": "trevorxg",
+  "author": "ovenx",
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.6",

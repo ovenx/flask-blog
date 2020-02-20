@@ -5,7 +5,7 @@
 
 clone 代码到本地
 ```shell
-git clone git@github.com:ovenx/flask-blog.git
+git clone https://github.com/ovenx/flask-blog.git
 ```
 
 安装 virtualenv
